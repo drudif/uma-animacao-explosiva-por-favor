@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Runs a skill script with Python + numpy + OpenCV in a throwaway uv environment (nothing installed system-wide;
+# also works where the system python3 is blocked, e.g. by the Xcode licence prompt on macOS).
+# Usage: bash scripts/py scripts/render.py piece.html ...
+exec uv run --quiet --python 3.12 --with numpy --with opencv-python-headless python "$@"
